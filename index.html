@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>MIT Registration Form</h1>
+        <form id="registration-form" action="/submit" method="post" novalidate>
+            <div class="form-progress">
+                <div class="progress-bar" id="progress-bar"></div>
+                <div class="steps">
+                    <span class="step step-active" aria-current="step">1</span>
+                    <span class="step">2</span>
+                    <span class="step">3</span>
+                </div>
+            </div>
+
+            <div class="form-section" id="section-1">
+                <h2>Personal Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="John" required>
+                        <small class="error-message" id="first-name-error"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Doe" required>
+                        <small class="error-message" id="last-name-error"></small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                    <small class="error-message" id="email-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1-234-567-890" required>
+                    <small class="error-message" id="phone-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main St, City, Country" required>
+                    <small class="error-message" id="address-error"></small>
+                </div>
+                <div class="form-action">
+                    <button type="button" onclick="nextSection()">Next</button>
+                </div>
+            </div>
+
+            <div class="form-section" id="section-2" style="display: none;">
+                <h2>Academic Background</h2>
+                <div class="form-group">
+                    <label for="current-school">Current School/University:</label>
+                    <input type="text" id="current-school" name="current-school" placeholder="School/University Name" required>
+                    <small class="error-message" id="current-school-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="gpa">GPA:</label>
+                    <input type="text" id="gpa" name="gpa" placeholder="3.8" required>
+                    <small class="error-message" id="gpa-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="major">Major/Field of Study:</label>
+                    <input type="text" id="major" name="major" placeholder="Computer Science" required>
+                    <small class="error-message" id="major-error"></small>
+                </div>
+                <div class="form-action">
+                    <button type="button" onclick="prevSection()">Previous</button>
+                    <button type="button" onclick="nextSection()">Next</button>
+                </div>
+            </div>
+
+            <div class="form-section" id="section-3" style="display: none;">
+                <h2>Additional Information</h2>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <small class="error-message" id="gender-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <small class="error-message" id="dob-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="program">Program:</label>
+                    <select id="program" name="program" required>
+                        <option value="" disabled selected>Select Program</option>
+                        <option value="undergraduate">Undergraduate</option>
+                        <option value="postgraduate">Postgraduate</option>
+                    </select>
+                    <small class="error-message" id="program-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Upload Photo:</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                </div>
+                <div class="form-action">
+                    <button type="button" onclick="prevSection()">Previous</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
